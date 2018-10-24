@@ -36,7 +36,7 @@
     from menu
   </select>
   <select id="selectAllD" resultMap="rm">
-    select t1.id pid ,t1.title pname ,t1.url purl,t2.url surl,t2.id  sid,t2.title sname from menu t1 left join menu t2
+    select t1.id pid ,t1.title pname ,t1.url purl,t1.icon picon,t2.icon sicon,t2.url surl,t2.id  sid,t2.title sname from menu t1 left join menu t2
 on t1.id=t2.pid where t1.pid is null
   </select>
   
@@ -44,10 +44,12 @@ on t1.id=t2.pid where t1.pid is null
     <result property="id" column="pid"/>
     <result property="title" column="pname"/>
     <result property="url" column="purl"/>
+    <result property="icon" column="picon"/>
     <collection property="list" ofType="com.baizhi.fina.entity.Menu">
       <result property="id" column="sid"/>
       <result property="title" column="sname"/>
       <result property="url" column="surl"/>
+      <result property="icon" column="sicon"/>
     </collection>
   </resultMap>
 </mapper>

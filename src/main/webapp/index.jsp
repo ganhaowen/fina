@@ -12,9 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach items="${requestScope.list}" var="user" varStatus="st">
-    ${user}${st.count}${list.size()}
-</c:forEach>
+132
 
 </body>
 </html>

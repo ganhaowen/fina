@@ -9,6 +9,9 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/datagrid-detailview.js"></script>
+    <script type="text/javascript" src="../js/jquery.edatagrid.js"></script>
+    <link rel="stylesheet" type="text/css" href="../themes/icon.css">
     <script type="text/javascript">
         <!--菜单处理-->
         $(function () {
@@ -22,7 +25,8 @@
                     for (var i = 0; i < data.list.length; i++) {
                         var s = '';
                         for (var j = 0; j < data.list[i].list.length; j++) {
-                            s += "<div>" + data.list[i].list[j].title + "</div>"
+                            s += "<div style='text-align: center'><a href='#' data-options=\"iconCls:'" + data.list[i].list[j].icon + "'\"  class=\"easyui-linkbutton\" on" +
+                                "click='ff(\"" + data.list[i].list[j].title + "\",\"" + data.list[i].list[j].url + "\",\"" + data.list[i].list[j].icon + "\")'>" + data.list[i].list[j].title + "<a></div>"
                         }
 
                         $('#aa').accordion('add', {
@@ -36,6 +40,21 @@
                 }
             })
         })
+
+        function ff(title, url, icon) {
+            var v = $("#tt").tabs("exists", title)
+            if (v) {
+                $('#tt').tabs('select', title)
+            } else {
+                $('#tt').tabs('add', {
+                    title: title,
+                    selected: true,
+                    closable: true,
+                    iconCls: icon,
+                    href: "${pageContext.request.contextPath}/" + "datagrid/banner.jsp"
+                });
+            }
+        }
 
     </script>
 
@@ -66,9 +85,10 @@
 </div>
 <div data-options="region:'center'">
     <div id="tt" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">
-        <div title="主页" data-options="iconCls:'icon-neighbourhood',"
-             style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;"></div>
+
     </div>
 </div>
+
+
 </body>
 </html>
