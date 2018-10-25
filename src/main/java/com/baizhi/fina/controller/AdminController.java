@@ -20,7 +20,6 @@ public class AdminController {
 
     @RequestMapping("/login")
     public String login(String username, String password, String kaptcha, HttpSession session) throws UnsupportedEncodingException {
-        logger.error(kaptcha);
         if (kaptcha.equalsIgnoreCase((String) session.getAttribute("kaptcha"))) {
             if (adminService.login(username, password)) {
                 return "redirect:/main/main.jsp";

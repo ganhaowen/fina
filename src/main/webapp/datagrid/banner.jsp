@@ -7,7 +7,9 @@
             url: '${pageContext.request.contextPath}/banner/selectAll',
             columns: [[
                 {field: 'name', title: '名称', width: 100},
+/*
                 {field: 'id', hidden:true, title: '编号', width: 100},
+*/
                 {
                     field: 'status', title: '状态', width: 100, editor: {
                         type: "text",
