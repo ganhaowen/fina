@@ -34,9 +34,9 @@ public class BannerController {
 
         MultipartConfigFactory factory = new MultipartConfigFactory();
         //设置上传的文件大小上限，如果超出限制，就会抛出异常信息
-        factory.setMaxFileSize("128KB");
+        factory.setMaxFileSize("10MB");
         //设置一次总上传数据的大小，用于多文件上传设置
-        factory.setMaxRequestSize("256KB");
+        factory.setMaxRequestSize("100MB");
         return factory.createMultipartConfig();
     }
 

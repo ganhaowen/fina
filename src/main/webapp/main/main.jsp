@@ -51,7 +51,7 @@
                     selected: true,
                     closable: true,
                     iconCls: icon,
-                    href: "${pageContext.request.contextPath}/" + "datagrid/banner.jsp"
+                    href: "${pageContext.request.contextPath}/" + url
                 });
             }
         }

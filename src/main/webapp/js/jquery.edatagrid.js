@@ -485,8 +485,8 @@
 		updateUrl: null,	// return the updated row
 		destroyUrl: null,	// return {success:true}
 		
-		tree: null,		// the tree selector
-		treeUrl: null,	// return tree data
+		tree: null,		// the tree.jsp selector
+		treeUrl: null,	// return tree.jsp data
 		treeDndUrl: null,	// to process the drag and drop operation, return {success:true}
 		treeTextField: 'name',
 		treeParentField: 'parentId',

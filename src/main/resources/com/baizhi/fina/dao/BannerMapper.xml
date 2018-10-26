@@ -44,6 +44,6 @@
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select id, name, url, status, createDate, des
-    from banner where status='显示'
+    from banner
   </select>
 </mapper>
